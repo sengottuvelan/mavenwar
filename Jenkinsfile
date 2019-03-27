@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Deliver') {
             steps {
-                sh "ansible-playbook /root/ansibledeploy.yml"
+                sh 'ansible-playbook /root/ansibledeploy.yml'
             }
         }
     }
