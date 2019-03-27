@@ -3,7 +3,7 @@
   vars:
   - warName: hello-1.0.war
   - warRemotePath: /var/lib/jenkins/workspace/samplemaven/target
-  - warLocalPath: /opt/tomcat/webapps/
+  - warLocalPath: /opt/tomcat/webapps
   tasks:
   - name: Download WAR to server
     become_user: tomcat
