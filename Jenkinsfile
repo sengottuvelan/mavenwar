@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Deliver') {
             steps {
-                echo "done"
+                sh "ansible-playbook /root/ansibledeploy.yml"
             }
         }
     }
