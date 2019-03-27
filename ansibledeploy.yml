@@ -8,7 +8,6 @@
   - name: Download WAR to server
     become: yes
     become_user: root
-    become_method: su
     synchronize: src={{ warRemotePath }}/{{ warName }} dest={{ warLocalPath }}/{{ warName }}
 
 #  - name: Unzip WAR file
