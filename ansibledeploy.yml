@@ -6,7 +6,7 @@
   - warLocalPath: /opt/tomcat/webapps
   tasks:
   - name: Download WAR to server
-    become_user: tomcat
+    become_user: root
     synchronize: src={{ warRemotePath }}/{{ warName }} dest={{ warLocalPath }}/{{ warName }}
 
 #  - name: Unzip WAR file
