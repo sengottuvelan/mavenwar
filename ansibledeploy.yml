@@ -1,0 +1,21 @@
+---
+- hosts: 127.0.0.1
+  vars:
+  - warName: hello-1.0.war
+  - warRemotePath: /var/lib/jenkins/workspace/samplemaven/target
+  - warLocalPath: /opt/tomcat/webapps/
+  tasks:
+  - name: Download WAR to server
+    synchronize: src={{ warRemotePath }}/{{ warName }} dest={{ warLocalPath }}/{{ warName }}
+
+#  - name: Unzip WAR file
+#    unarchive: src={{ warLocalPath }}/{{ warName }} dest=/opt/tomcat/webapps/ROOT/ copy=no mode=0755 owner=tomcat group=tomcat setype=war
+    notify:
+        - Restart tomcat
+
+#  - name: Delete remote war file
+#    file: path={{ warLocalPath }}/{{ warName }} state=absent
+
+  handlers:
+    - name: Restart tomcat
+      service: name=tomcat state=restarted
