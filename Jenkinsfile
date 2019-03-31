@@ -20,7 +20,6 @@ pipeline {
         stage('Deliver') {
             steps {
                 //sh 'ansible-playbook ansibledeploy.yml'
-                sh 
                 build job: 'deploytotomcat'
             }
         }
