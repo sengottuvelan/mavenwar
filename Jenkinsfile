@@ -12,9 +12,15 @@ pipeline {
             }
             
         }
+        stage ('archive artifact') {
+            steps {
+                archiveArtifacts artifacts: 'target/*.war', fingerprint: true
+            }
+        }
         stage('Deliver') {
             steps {
                 //sh 'ansible-playbook ansibledeploy.yml'
+                sh 
                 build job: 'deploytotomcat'
             }
         }
