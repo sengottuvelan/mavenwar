@@ -14,7 +14,9 @@ pipeline {
         }
         stage('Deliver') {
             steps {
-                sh 'ansible-playbook ansibledeploy.yml'
+                //sh 'ansible-playbook ansibledeploy.yml'
+                build job: 'deploytotomcat'
+                }
             }
         }
     }
