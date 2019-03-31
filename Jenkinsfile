@@ -16,7 +16,6 @@ pipeline {
             steps {
                 //sh 'ansible-playbook ansibledeploy.yml'
                 build job: 'deploytotomcat'
-                }
             }
         }
     }
