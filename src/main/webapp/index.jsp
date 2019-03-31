@@ -6,15 +6,9 @@
 <h1>Congratulations!</h1>
 
 
-<h2>You have successfully launched your tomcat app and added war</h2>
+<h2>You have successfully launched your tomcat app and added war123</h2>
 
-<p>This Instance is running on <strong><%= System.getenv("BOXFUSE_PLATFORM_NAME") %>
-</strong> and has the id <strong><%= System.getenv("BOXFUSE_INSTANCE_ID") %>
-</strong>.</p>
 
-<p>It is based on the Image <strong><%= System.getenv("BOXFUSE_IMAGE_COORDINATES")%>
-</strong> generated from <strong><%= System.getenv("BOXFUSE_PAYLOAD_NAME")%>
-</strong></p>
 
 <% if("virtualbox".equals(System.getenv("BOXFUSE_PLATFORM_ID"))) { %>
 <h2 style="margin-top: 80px">Next steps</h2>
